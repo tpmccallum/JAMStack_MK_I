@@ -27,14 +27,17 @@
         </p>
         <script type="text/javascript">
             function countComets() {
-                $.ajax({
-                    url: "https://api.le-systeme-solaire.net/rest/knowncount/comet",
-                    type: "GET",
-                    success: function(data) {
-                        $('#result').html(data);
-                    }
-                });
-            }
+              var settings = {
+                  "url": "https://api.le-systeme-solaire.net/rest/knowncount/comet",
+                  "method": "GET",
+                  "timeout": 0,
+              };
+
+              $.ajax(settings).done(function(response) {
+                  console.log(response);
+                  $('#result').html(response);
+              });
+          }
         </script>
       </div>
       <div class="col-sm-4">
