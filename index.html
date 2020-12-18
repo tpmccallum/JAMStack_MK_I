@@ -32,7 +32,6 @@
                 $.ajax({
                     url: "https://api.le-systeme-solaire.net/rest/knowncount/comet",
                     type: "GET",
-                    processData: false,
                     success: function(data) {
                         $('#result').html(data);
                     }
