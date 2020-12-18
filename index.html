@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JAMStack MK I
+    </title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+    </script>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-4">
+        <h1>A quick API call using HTML markup
+        </h1>
+        <p>Pressing this button will return the known count of comets in the universe.</p>
+        <button id='_the_button' value='How many comets?' onclick="countComets()">submit
+        </button>
+        <hr />
+        <h1>Result
+        </h1>
+        <p id="result">Result: ...
+        </p>
+        <script type="text/javascript">
+            function countComets() {
+                $.ajax({
+                    url: "https://api.le-systeme-solaire.net/rest/knowncount/comet",
+                    type: "GET",
+                    processData: false,
+                    success: function(data) {
+                        $('#result').html(data);
+                    }
+                });
+            }
+        </script>
+      </div>
+      <div class="col-sm-4">
+      </div>
+    </div>
+  </body>
+</html>
