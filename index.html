@@ -18,24 +18,24 @@
       </div>
       <div class="col-sm-4">
         <h1>A quick API call</h1>
-        <p>Pressing this button will return the known count of comets in the universe.</p>
-        <button id='_the_button' onclick="countComets()">How many comets?</button>
+        <p>Pressing this button will return the known axial tilt of the planet Mercury.</p>
+        <button id='_the_button' onclick="mercuryTilt()">What is Mercury's axial tilt?</button>
         <hr />
         <h1>Result
         </h1>
-        <p id="result">Comets =</p>
+        <p id="result">Mercury's axial tilt =</p>
         <script type="text/javascript">
-            function countComets() {
+            function mercuryTilt() {
               var settings = {
-                  "url": "https://api.le-systeme-solaire.net/rest/knowncount/comet",
+                  "url": "https://api.le-systeme-solaire.net/rest/bodies/mercury",
                   "method": "GET",
                   "timeout": 0,
               };
 
               $.ajax(settings).done(function(response) {
                   console.log(response);
-                  var known_comet_count = JSON.stringify(response.knownCount);
-                  $('#result').html("Comets = " + known_comet_count);
+                  var known_comet_count = JSON.stringify(response.axialTilt);
+                  $('#result').html("Mercury's axial tilt = " + known_comet_count);
               });
           }
         </script>
@@ -45,3 +45,4 @@
     </div>
   </body>
 </html>
+
