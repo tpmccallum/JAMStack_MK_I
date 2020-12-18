@@ -23,8 +23,7 @@
         <hr />
         <h1>Result
         </h1>
-        <p id="result">Result: ...
-        </p>
+        <p id="result">Comets =</p>
         <script type="text/javascript">
             function countComets() {
               var settings = {
@@ -35,7 +34,8 @@
 
               $.ajax(settings).done(function(response) {
                   console.log(response);
-                  $('#result').html(response);
+                  var known_comet_count = JSON.stringify(response.knownCount);
+                  $('#result').html("Comets = " + known_comet_count);
               });
           }
         </script>
